@@ -1,13 +1,29 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Upload to GCS'
+description: 'Upload files to a GCS bucket'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  source-directory:
+    description: 'directory to upload from'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+  sources:
+    description: 'globbing patterns to select the files to upload, one per line'
+    required: true
+  cache-control:
+    description: 'cache-control header to set'
+    required: true
+  destination:
+    description: 'bucket and optional prefix'
+    required: true
+  credentials:
+    description: 'service account JSON key'
+    required: true
+  gzip-extensions:
+    description: 'extensions to gzip before uploading'
+    required: false
+    default: 'css,js,html,eot,ico,otf,ttf,json,svg'
+  max-parallel:
+    description: 'maximum number to upload in parallel'
+    required: false
+    default: '20'
 runs:
   using: 'node12'
   main: 'dist/index.js'
