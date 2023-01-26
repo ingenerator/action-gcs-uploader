@@ -26,7 +26,7 @@ module.exports = (githubWorkspace) => {
         cacheControl:      core.getInput('cache-control', {required: true}),
         destinationBucket: destination.bucket,
         destinationPrefix: destination.prefix,
-        credentials:       core.getInput('credentials', {required: true}),
+        credentials:       core.getInput('credentials', {required: false}),
         parallelUploads:   core.getInput('max-parallel', {required: true}),
         gzipExtensions:    core.getInput('gzip-extensions', {required: true}).split(',')
     }
