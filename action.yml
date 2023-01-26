@@ -14,8 +14,8 @@ inputs:
     description: 'bucket and optional prefix'
     required: true
   credentials:
-    description: 'service account JSON key'
-    required: true
+    description: 'Deprecated - A JSON service account key. If blank, will attempt to use Google Application Default Credentials'
+    required: false
   gzip-extensions:
     description: 'extensions to gzip before uploading'
     required: false

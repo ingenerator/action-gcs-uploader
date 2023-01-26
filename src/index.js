@@ -5,12 +5,19 @@ const readInputs = require('./readInputs');
 const iterateFilesInParallel = require('./iterateFilesInParallel');
 const {buildUploadOptions} = require('./uploadHelpers');
 
+function createStorageClient(actionOptions) {
+    const opts = {};
+    if (actionOptions.credentials) {
+        opts.credentials = JSON.parse(actionOptions.credentials);
+    }
+
+    return new Storage(opts);
+}
+
 async function run() {
     try {
         const options = readInputs(process.cwd());
-        const storage = new Storage({
-            credentials: JSON.parse(options.credentials)
-        });
+        const storage = createStorageClient(options);
         const bucket = storage.bucket(options.destinationBucket);
 
         core.info(`Initiating upload from ${options.searchBaseDir}`);
