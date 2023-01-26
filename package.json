@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.2.7",
-    "@actions/glob": "^0.1.1",
+    "@actions/glob": "^0.4.0",
     "@google-cloud/storage": "^6.9.1"
   },
   "devDependencies": {
