@@ -1,35 +1,37 @@
 {
-  "name": "javascript-action",
+  "name": "action-gcs-uploader",
   "version": "1.0.0",
-  "description": "JavaScript Action Template",
-  "main": "index.js",
+  "description": "Github action: upload to GCS",
+  "main": "src/index.js",
   "scripts": {
     "lint": "eslint .",
-    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "prepare": "ncc build src/index.js -o dist --source-map --license licenses.txt",
     "test": "jest",
     "all": "npm run lint && npm run prepare && npm run test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/javascript-action.git"
+    "url": "git+https://github.com/ingenerator/action-gcs-uploader.git"
   },
   "keywords": [
     "GitHub",
     "Actions",
-    "JavaScript"
+    "Google Cloud Storage"
   ],
-  "author": "",
+  "author": "acoulton",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
+    "url": "https://github.com/ingenerator/action-gcs-uploader/issues"
   },
-  "homepage": "https://github.com/actions/javascript-action#readme",
+  "homepage": "https://github.com/ingenerator/action-gcs-uploader#readme",
   "dependencies": {
-    "@actions/core": "^1.2.5"
+    "@actions/core": "^1.2.7",
+    "@actions/glob": "^0.1.1",
+    "@google-cloud/storage": "^5.8.5"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.27.0",
-    "eslint": "^7.4.0",
+    "eslint": "^7.25.0",
     "jest": "^26.6.3"
   }
 }
