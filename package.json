@@ -24,6 +24,9 @@
     "url": "https://github.com/ingenerator/action-gcs-uploader/issues"
   },
   "homepage": "https://github.com/ingenerator/action-gcs-uploader#readme",
+  "engines": {
+    "node": "^16"
+  },
   "dependencies": {
     "@actions/core": "^1.2.7",
     "@actions/glob": "^0.1.1",
