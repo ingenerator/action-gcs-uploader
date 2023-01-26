@@ -27,7 +27,7 @@
   "dependencies": {
     "@actions/core": "^1.2.7",
     "@actions/glob": "^0.1.1",
-    "@google-cloud/storage": "^5.8.5"
+    "@google-cloud/storage": "^6.9.1"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.27.0",
