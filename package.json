@@ -25,16 +25,16 @@
   },
   "homepage": "https://github.com/ingenerator/action-gcs-uploader#readme",
   "engines": {
-    "node": "^16"
+    "node": "^20"
   },
   "dependencies": {
     "@actions/core": "^1.2.7",
-    "@actions/glob": "^0.1.1",
-    "@google-cloud/storage": "^6.9.1"
+    "@actions/glob": "^0.5.0",
+    "@google-cloud/storage": "^7.12.1"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.36.0",
+    "@vercel/ncc": "^0.38.1",
     "eslint": "^8.32.0",
-    "jest": "^26.6.3"
+    "jest": "^29.7.0"
   }
 }

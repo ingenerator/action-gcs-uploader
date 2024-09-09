@@ -1,15 +1,8 @@
-const fs = require('fs').promises;
-
-const isDirectory = async (file) => {
-    const stat = await fs.lstat(file);
-    return stat.isDirectory();
-}
-
 const worker = async (iterator, callback) => {
     let doneCount = 0;
     let next = await iterator.next();
     do {
-        if ((next.value !== undefined) && !await isDirectory(next.value)) {
+        if (next.value !== undefined) {
             await callback(next.value);
             doneCount++;
         }

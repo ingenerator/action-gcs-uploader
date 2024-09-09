@@ -14,6 +14,18 @@ function createStorageClient(actionOptions) {
     return new Storage(opts);
 }
 
+async function createGlobberFileList(patterns) {
+    const globber = await glob.create(
+        patterns,
+        {
+            matchDirectories: false,
+            excludeHiddenFiles: false,
+        }
+    );
+
+    return globber.globGenerator();
+}
+
 async function run() {
     try {
         const options = readInputs(process.cwd());
@@ -24,8 +36,8 @@ async function run() {
 
         // Github actions glob bases itself from the current working directory
         process.chdir(options.searchBaseDir);
-        const globber = await glob.create(options.sources);
-        const fileList = globber.globGenerator();
+
+        const fileList = await createGlobberFileList(options.sources)
 
         const filesUploaded = await iterateFilesInParallel(fileList, options.parallelUploads, async (file) => {
             core.debug(`- Upload ${file}`)
