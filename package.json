@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/ingenerator/action-gcs-uploader#readme",
   "engines": {
-    "node": "^16"
+    "node": "^20"
   },
   "dependencies": {
     "@actions/core": "^1.2.7",
